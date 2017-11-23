@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_58872_needit_needit">u_requested_for=62826bf03710200044e0bfc8bcbe5df1^EQ<item display_table="sys_user" display_value="Abel Tuter" endquery="false" field="u_requested_for" goto="false" newquery="false" operator="=" or="false" value="62826bf03710200044e0bfc8bcbe5df1"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>false</global>
+        <inherit>false</inherit>
+        <model_id/>
+        <model_table/>
+        <on_load>false</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+g_form.showFieldMsg('short_description','Briefly explain what you need.','info');
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {	
+	var caller = g_form.getReference('u_requested_for', doAlert);
+	g_form.hideFieldMsg('short_description',true);
+}
+
+function doAlert(caller) { //reference is passed into callback as first arguments
+				g_form.setValue('short_description',g_form.getReference('u_requested_for') + " -  Updated field value");
+	}]]></script_true>
+        <set_values/>
+        <short_description>Needit_vw-User_onChange_field-Requested for_is_AbelTuter</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-23 15:24:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>98212a22db2a83001647721dbf9619cf</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Needit_vw-User_onChange_field-Requested for_is_AbelTuter</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ui_policy_98212a22db2a83001647721dbf9619cf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-23 16:37:27</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <ui_type>0</ui_type>
+        <view display_value="User" name="User">User</view>
+    </sys_ui_policy>
+</record_update>
